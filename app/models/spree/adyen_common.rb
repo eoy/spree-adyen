@@ -6,6 +6,8 @@ module Spree
       preference :api_username, :string
       preference :api_password, :string
       preference :merchant_account, :string
+      
+      attr_accessible :preferred_api_username, :preferred_api_password, :preferred_merchant_account
 
       def provider_class
         ::Adyen::API
