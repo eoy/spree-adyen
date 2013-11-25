@@ -5,6 +5,8 @@ module Spree
 
     preference :skin_code, :string
     preference :shared_secret, :string
+    
+    attr_accessible :preferred_skin_code, :preferred_shared_secret
 
     def source_required?
       false
