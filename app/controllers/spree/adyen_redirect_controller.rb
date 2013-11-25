@@ -13,11 +13,11 @@ module Spree
       # cant set payment to complete here due to a validation
       # in order transition from payment to complete (it requires at
       # least one pending payment)
-      payment = order.payments.create!(
+      payment = order.payments.create!({
         :amount => order.total,
         :payment_method => payment_method,
         :response_code => params[:pspReference]
-      )
+      }, :without_protection => true)
 
       order.next
 
